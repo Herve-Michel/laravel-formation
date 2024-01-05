@@ -17,3 +17,8 @@ Route::get(
     '/create-training',
     [TrainingController::class, 'create']
 )->name('training.create');
+
+Route::post(
+    '/create-training',
+    [TrainingController::class, 'store']
+)->name('training.store');

@@ -1,16 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.main')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
 
-<body>
+@section('content')
+
+<ul class="list-group">
+
     @foreach ($trainings as $training)
-    <p>{{$training->name}}</p>
-    @endforeach
-</body>
+    <li class="list-group-item">{{$training->name}} ;
+        @if ($training->type == 'adulte')
+        Adulte
+        @else
+        Enfant
+        @endif
+        <a class="btn btn-primary" href="{{route('training.edit', ['id' => $training->id])}}">Edit</a>
 
-</html>
+        <form action="{{route('training.destroy', ['id' => $training->id])}}" method="POST">
+            @csrf
+            @method('DELETE')
+            <button class="btn btn-danger" type="submit">Delete</button>
+
+    </li>
+
+    @endforeach
+</ul>
+
+@endsection

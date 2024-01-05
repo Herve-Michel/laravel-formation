@@ -22,3 +22,18 @@ Route::post(
     '/create-training',
     [TrainingController::class, 'store']
 )->name('training.store');
+
+Route::get(
+    '/edit-training/{id}',
+    [TrainingController::class, 'edit']
+)->name('training.edit');
+
+Route::put(
+    '/edit-training/{id}',
+    [TrainingController::class, 'update']
+)->name('training.update');
+
+Route::delete(
+    '/delete-training/{id}',
+    [TrainingController::class, 'destroy']
+)->name('training.destroy');

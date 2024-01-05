@@ -12,4 +12,9 @@ class TrainingController extends Controller
         $trainings = Training::all();
         return view('training.index', ['trainings' => $trainings]);
     }
+
+    public function create()
+    {
+        return view('training.create');
+    }
 }

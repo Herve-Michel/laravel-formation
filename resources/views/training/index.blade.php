@@ -8,9 +8,9 @@
 </head>
 
 <body>
-    <p>
-        {{json_encode($trainings)}}
-    </p>
+    @foreach ($trainings as $training)
+    <p>{{$training->name}}</p>
+    @endforeach
 </body>
 
 </html>

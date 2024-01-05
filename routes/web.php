@@ -12,3 +12,8 @@ Route::get(
     '/training',
     [TrainingController::class, 'index']
 )->name('training.index');
+
+Route::get(
+    '/create-training',
+    [TrainingController::class, 'create']
+)->name('training.create');

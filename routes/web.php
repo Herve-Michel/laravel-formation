@@ -37,3 +37,8 @@ Route::delete(
     '/delete-training/{id}',
     [TrainingController::class, 'destroy']
 )->name('training.destroy');
+
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');

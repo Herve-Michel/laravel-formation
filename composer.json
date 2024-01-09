@@ -11,7 +11,8 @@
         "laravel/fortify": "^1.19",
         "laravel/framework": "10.39.0",
         "laravel/sanctum": "^3.3",
-        "laravel/tinker": "^2.8"
+        "laravel/tinker": "^2.8",
+        "mezatsong/laravel-swagger-docs": "^1.6"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",

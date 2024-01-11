@@ -1,9 +1,9 @@
 <?php
 
+use App\Http\Controllers\ImageController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TrainingController;
-
-
+use App\Http\Controllers\WeatherController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -43,3 +43,30 @@ Route::delete(
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+Route::get('/weather/search', [
+    WeatherController::class, 'search'
+])->name('weather.search');
+
+Route::post('/weather/cities', [
+    WeatherController::class, 'cities'
+])->name('weather.cities');
+
+Route::get('/weather/{city}', [
+    WeatherController::class, 'show'
+])->name('weather.show');
+
+
+
+
+
+
+
+
+
+
+
+
+
+Route::get('/image/create', [ImageController::class, 'create'])->name('image.create');
+Route::post('/image/store', [ImageController::class, 'store'])->name('image.store');
